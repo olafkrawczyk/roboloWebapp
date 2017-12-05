@@ -32,5 +32,18 @@ export class WorkersListComponent implements OnInit {
 
   onOpenDialog() {
     this.editModalRef = this.dialog.open(WorkerEditComponent);
+    this.editModalRef.afterClosed().subscribe(
+      e => this.getWorkers()
+    );
+  }
+
+  getWorkers() {
+    this.workerService.getAllWorkers().subscribe(
+      data => {
+        this.workers = data;
+        console.log(data);
+      },
+      error => console.log(error)
+    );
   }
 }
