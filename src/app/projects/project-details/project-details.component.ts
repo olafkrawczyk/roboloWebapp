@@ -81,6 +81,12 @@ export class ProjectDetailsComponent implements OnInit {
         this.tasksToDo = data[0];
         this.tasksInProgress = data[1];
         this.tasksDone = data[2];
+        
+        if (data === []) {
+          this.tasksToDo = [];
+          this.tasksInProgress = [];
+          this.tasksDone = [];
+        }
 
         this.progress = ((this.tasksDone.length) / (this.tasksInProgress.length + this.tasksToDo.length + this.tasksDone.length)) * 100;
       },
