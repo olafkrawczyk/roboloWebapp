@@ -7,4 +7,5 @@ This site was created with:
    * Bootstrap 3
  
  site available at: [Robolify at heroku](https://robolify.herokuapp.com/)
- `username: damn; password: password`
+ `username: damn
+ password: password`
